@@ -13,7 +13,7 @@ public class TestTask extends BaskTask {
         this.name = "testTask";
     }
 
-    @Scheduled(cron = "* */1 * * * *")
+//    @Scheduled(cron = "* */1 * * * *")
     public void process() {
         super.process();
     }
