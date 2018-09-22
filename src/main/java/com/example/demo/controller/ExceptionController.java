@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +35,7 @@ public class ExceptionController {
      * @return
      * @throws Exception
      */
-    @GetMapping(value = "/baseException")
+    @RequestMapping(method = {RequestMethod.POST, RequestMethod.GET}, value = "/baseException")
     private String baseExceptionTest() throws Exception {
         throw new BaseException("1000", "测试自定义错误");
     }
